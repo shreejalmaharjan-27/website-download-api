@@ -5,8 +5,8 @@ import archiver from 'archiver';
 import * as fs from 'fs';
 import { doesNotMatch } from 'assert';
 
-const app = express()
-const port = 3000
+const app = express();
+const port =  process.env.PORT || 3000;
 function isUrl(s) {
     var regexp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
     return regexp.test(s);
