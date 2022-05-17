@@ -61,7 +61,11 @@ app.get('/', (req, res) => {
                             defaultViewport: {
                                 "width":1920,
                                 "height":1080
-                            }
+                            },
+                            args: [
+                                '--no-sandbox',
+                                '--disable-setuid-sandbox',
+                              ],
                         },
                         scrollToBottom: { timeout: 10000, viewportN: 10 },
                         blockNavigation: true /* optional */
