@@ -1,4 +1,11 @@
-{
+{ 
+    "name": "nodescraper",
+    "version": "1.0.0",
+    "description": "Website Scraper",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
     "dependencies": {
       "archiver": "^5.3.1",
       "express": "^4.18.1",
