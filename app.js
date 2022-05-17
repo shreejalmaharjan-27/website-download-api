@@ -68,7 +68,7 @@ app.get('/', (req, res) => {
                               ],
                         },
                         scrollToBottom: { timeout: 10000, viewportN: 10 },
-                        blockNavigation: true /* optional */
+                        blockNavigation: false /* optional */
                     })
                 ]
             }).then(()=>{
