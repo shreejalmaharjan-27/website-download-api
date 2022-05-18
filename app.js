@@ -4,8 +4,13 @@ import express from 'express';
 import archiver from 'archiver';
 import * as fs from 'fs';
 import { doesNotMatch } from 'assert';
+import cors from 'cors';
 
 const app = express();
+app.use(cors({
+    origin: '*', /*👈 you can add array of multiple origins you want to allow access to api*/
+    methods: ['GET','OPTIONS']
+}));
 const port =  process.env.PORT || 3000;
 function isUrl(s) {
     var regexp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
@@ -102,7 +107,6 @@ app.get('/', (req, res) => {
     res.send(response);
 }
 })
-
 app.use('/files',express.static('./files'));
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
