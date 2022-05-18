@@ -49,11 +49,6 @@ app.get('/', (req, res) => {
             scrape({
                 urls: [url],
                 directory: `${dir}/raw`,
-                request: {
-                    headers: {
-                    'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_15) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4859.164 Safari/537.36"
-                    }
-                },
                 plugins: [
                     new PuppeteerPlugin({
                         launchOptions: { 
@@ -62,10 +57,6 @@ app.get('/', (req, res) => {
                                 "width":1920,
                                 "height":1080
                             },
-                            args: [
-                                '--no-sandbox',
-                                '--disable-setuid-sandbox',
-                              ],
                         },
                         scrollToBottom: { timeout: 10000, viewportN: 10 },
                         blockNavigation: false /* optional */
